@@ -10,7 +10,7 @@ class BurgerBuilder extends Component {
 
     //     }
     // }
-    
+
     state = {
         ingredients: {
             salad: 0,
