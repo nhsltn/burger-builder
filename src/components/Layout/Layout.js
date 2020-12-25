@@ -7,17 +7,24 @@ import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
 class Layout extends Component {
     state = {
-        showSideDrawer : true
+        showSideDrawer : false 
     }
     
     closeSideDrawer = () => {
         this.setState({showSideDrawer: false});
     }
 
+    sideDrawerToggleHandler = () => {
+        // this.setState({showSideDrawer: !this.state.showSideDrawer}); work but sometimes unexpected error
+        this.setState((prevState) => {
+            return {showSideDrawer: !prevState.showSideDrawer };
+        });
+    }
+
     render () {
         return(
             <Aux>
-                <Toolbar />
+                <Toolbar clickHumberger={this.sideDrawerToggleHandler}/>
                 <SideDrawer open={this.state.showSideDrawer} closed={this.closeSideDrawer}/>
                 <main className={classes.Content}>
                     {this.props.children}
