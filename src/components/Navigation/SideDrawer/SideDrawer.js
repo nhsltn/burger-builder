@@ -8,7 +8,9 @@ const sideDrawer = (props) => {
     //..
     return(
         <div className={classes.SideDrawer}>
-            <Logo />
+            <div className={classes.Logo}>
+                <Logo />
+            </div>
             <nav>
                 <NavigationItems />
             </nav>
@@ -16,4 +18,4 @@ const sideDrawer = (props) => {
     );
 };
 
-export default sideDrawer;
+export default sideDrawer; 
