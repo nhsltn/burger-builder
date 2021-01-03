@@ -4,6 +4,7 @@ import classes from './Burger.css';
 import BurgerIngredients from './BurgerIngredients/BurgerIngredients'
 
 const burger = (props) => {
+    console.log(props);
     let transformedIngredients = Object.keys(props.ingredients) // Convert object of state to array
         .map(igKey => { // Get Value of ingredients state ex = [cheese, bacon, salad, meat] 
             return [...Array(props.ingredients[igKey])] // get value of nothing array from igkey = [4) [Array(1), Array(1), Array(2), Array(2)] which all array is undefinied because we just want get the how much ingredient
