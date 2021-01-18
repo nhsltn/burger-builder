@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
 import Input from '../../../components/UI/Input/Input';
-import axios from '../../../axios-orders'
 import Button from '../../../components/UI/Button/Button';
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import classes from './ContactData.css';
@@ -97,22 +96,11 @@ class ContactData extends Component {
             formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
             console.log(formData);
         }
-        const order = {
-            ingredients: this.props.igd,
-            price: this.props.price,
-            orderData: formData
-        };
-        axios.post('/orders.json', order)
-            .then(response => {
-                console.log(response);
-                this.setState({loading: false});
-                this.props.history.push('/');
-            })
-            .catch(error => {
-                console.log(error);
-                this.setState({loading: false});
-            });
-        console.log(this.props.igd);
+        // const order = {
+        //     ingredients: this.props.igd,
+        //     price: this.props.price,
+        //     orderData: formData
+        // };
     }
 
     checkValidity = (value, rules) => {
