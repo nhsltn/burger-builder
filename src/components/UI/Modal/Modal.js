@@ -9,10 +9,6 @@ class Modal extends Component {
         return nextProps.show !== this.props.show || nextProps.children !== this.props.children; // Loading didnt load because component only change when show props triggered, so add another logic to it
     }
 
-    componentDidUpdate() {
-        console.log(`[Modal] Did Update`);
-    }
-
     render() {
         return (
             <Aux>

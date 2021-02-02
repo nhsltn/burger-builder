@@ -102,8 +102,7 @@ class ContactData extends Component {
         event.preventDefault();
         const formData = {};
         for (let formElementIdentifier in this.state.orderForm) {
-            formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;
-            console.log(formData);
+            formData[formElementIdentifier] = this.state.orderForm[formElementIdentifier].value;            
         }
         const order = {
             ingredients: this.props.igd,
@@ -127,14 +126,9 @@ class ContactData extends Component {
         let formIsValid = true;
         for(let inputIdentifier in updatedOrderForm) {
             formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
-
         }
-            console.log(formIsValid);
 
-        this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});
-        // console.log(updatedFormElement);
-        console.log(updatedOrderForm);
-        
+        this.setState({orderForm: updatedOrderForm, formIsValid: formIsValid});      
     }
 
     render() {
